@@ -22,7 +22,6 @@ public class CartRepository {
     public CartRepository(Application application) {
         CartDatabase database = CartDatabase.getInstance(application);
         cartDAO = database.cartDAO();
-        Toast.makeText(application,"test"+PreferencesUtils.getSaved(application, AppConstant.UserID) , Toast.LENGTH_SHORT).show();
         allCart = cartDAO.getAllCarts( PreferencesUtils.getSaved(application, AppConstant.UserID));
     }
     //creating a method to insert the data to our database.

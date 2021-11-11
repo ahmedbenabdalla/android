@@ -14,7 +14,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantCommand">
-
+        <activity
+            android:name=".ui.view.admin.AddDishActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.view.admin.OrdersActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.view.admin.MenuActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.view.admin.AddRestaurantActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.view.admin.RestaurantsActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.view.SignUpActivity"
             android:exported="true" />
@@ -23,14 +37,10 @@
             android:exported="true" />
         <activity
             android:name=".ui.view.client.HomeActivity"
-            android:exported="true" >
-
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.view.SignInActivity"
             android:exported="true" />
-
         <activity
             android:name=".ui.view.IntroActvity"
             android:exported="true">
@@ -39,7 +49,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MainActivity"

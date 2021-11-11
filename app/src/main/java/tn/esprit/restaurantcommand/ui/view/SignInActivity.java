@@ -48,7 +48,7 @@ public class SignInActivity extends AppCompatActivity {
                     {
                         startActivity(new Intent(SignInActivity.this, HomeActivity.class));
                     }else{
-                        startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
+                        startActivity(new Intent(SignInActivity.this, DashboardActivity.class).putExtra("userName","hi"+" "+response.body().getFirstName()+" "+response.body().getLastName()));
                     }
                 }
 
@@ -79,9 +79,10 @@ public class SignInActivity extends AppCompatActivity {
                                 PreferencesUtils.save(AppConstant.TOKEN, response.body().getToken(), getApplicationContext());
                                 if(response.body().getRole().equals("client"))
                                 {
-                                    startActivity(new Intent(SignInActivity.this, HomeActivity.class));
+                                    Intent intent=new Intent(SignInActivity.this, HomeActivity.class);
+                                    startActivity(intent);
                                 }else {
-                                    startActivity(new Intent(SignInActivity.this, DashboardActivity.class));
+                                    startActivity(new Intent(SignInActivity.this, DashboardActivity.class).putExtra("userName","hi"+" "+response.body().getFirstName()+" "+response.body().getLastName()));
                                 }
 
                         }

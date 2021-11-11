@@ -92,6 +92,14 @@ public class HomeFragment extends Fragment {
         call.enqueue(new Callback<List<Dish>>() {
             @Override
             public void onResponse(Call<List<Dish>> call, Response<List<Dish>> response) {
+                for(int i=0;i<response.body().toArray().length;i++)
+                {
+                    if(response.body().get(i).getAvaible())
+                    {
+                        dishes.add(response.body().get(i));
+                    }
+                }
+
                 dishes.addAll(response.body());
                 adapterD=new DishClientAdapter(dishes,getContext());
                 recyclerViewDishList.setAdapter(adapterD);
